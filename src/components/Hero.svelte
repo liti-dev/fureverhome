@@ -26,12 +26,16 @@
     width: 80%;
     padding: 5rem;
     p {
-      font-size: xx-large;
+      font-size:clamp(1.5rem, 10vw, 3vmax);;
       color:beige;
       text-shadow: 1px 1px gray;
     }
    
-
+//     @media screen and (max-width: 600px) {
+//   p {
+//     font-size: 4vmax;
+//   }
+// }
   }
   
 </style>
