@@ -1,7 +1,10 @@
 <script lang="ts">
-  import { Grid, Row, Button, Column, Tag, Theme} from "carbon-components-svelte";
+  import {Button, Column, ExpandableTile, Grid, Row, Tag, Theme} from "carbon-components-svelte";
  
+  import ExpandableSection from "./components/ExpandableSection.svelte";
   import Hero from './components/Hero.svelte'
+  import ShelterCard from "./components/ShelterCard.svelte"
+  
 
   const shelters = [
     {id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
@@ -30,13 +33,13 @@
 />
 
 <Hero/>
-<Grid id="shelters" >
+<!-- <Grid id="shelters" >
   <Row  padding>
     {#each shelters as shelter }
-    <Column class="card"  sm={4} md={4} lg={4}><img src="https://img.freepik.com/free-vector/different-pets-concept_23-2148509081.jpg?size=626&ext=jpg" alt="pet shelter"/><Tag>Pets</Tag><p>Name: {shelter.name}</p><p>Location: {shelter.location}<Button class="card-button" href={shelter.url} size="small">Visit their website</Button></Column>
-    {/each}
-  </Row>
-</Grid>
+ <ShelterCard item={shelter}/>
+   {/each}</Row>
+</Grid> -->
+<ExpandableSection items={shelters} component= {ShelterCard} itemsAbove={3} title={"More shelters"}/>
 
 <style lang="scss">
  
