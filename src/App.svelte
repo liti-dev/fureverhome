@@ -1,20 +1,51 @@
 <script lang="ts">
-  import {Button, Column, ExpandableTile, Grid, Row, Tag, Theme} from "carbon-components-svelte";
+  import {Button, Column,  Grid, Row, Tag, Theme} from "carbon-components-svelte";
  
   import ExpandableSection from "./components/ExpandableSection.svelte";
+  import ExpandableTile from "./components/ExpandableTile.svelte";
   import Hero from './components/Hero.svelte'
   import ShelterCard from "./components/ShelterCard.svelte"
   
 
-  const shelters = [
-    {id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
-{id: '02', name: 'Mid Antrim Animal Sanctuary', location:'Antrim', url:'https://midantrim.org/'},
-{id: '03', name: 'Assisi Animal Sanctuary', location:'Bangor', url:'https://www.assisi-ni.org/'},
-{id: '04', name: 'Crosskennan Lane Animal Sanctuary', location:'Antrim', url:'https://www.crosskennanlane.co.uk/'},
-{id: '05', name: 'Play for Strays', location:'Antrim', url:'https://playforstrays.org.uk/'},
-{id: '06', name: 'Paws and People', location:'Banbridge', url:'https://pawsandpeople.wixsite.com/pawsandpeopleni'},
+//   const shelters = [
+//     {id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+// {id: '02', name: 'Mid Antrim Animal Sanctuary', location:'Antrim', url:'https://midantrim.org/'},
+// {id: '03', name: 'Assisi Animal Sanctuary', location:'Bangor', url:'https://www.assisi-ni.org/'},
+// {id: '04', name: 'Crosskennan Lane Animal Sanctuary', location:'Antrim', url:'https://www.crosskennanlane.co.uk/'},
+// {id: '05', name: 'Play for Strays', location:'Antrim', url:'https://playforstrays.org.uk/'},
+// {id: '06', name: 'Paws and People', location:'Banbridge', url:'https://pawsandpeople.wixsite.com/pawsandpeopleni'},
 
+// ]
+const items = [
+  {
+    component: ShelterCard,
+    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+  }},
+  {
+    component: ShelterCard,
+    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+  }},
+  
+  {
+    component: ShelterCard,
+    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+  }},
+  {
+    component: ShelterCard,
+    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+  }},
+  {
+    component: ShelterCard,
+    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+  }},
+  {
+    component: ShelterCard,
+    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+  }},
+   
 ]
+
+
 </script>
 
 <!-- https://carbondesignsystem.com/components/button/style -->
@@ -39,7 +70,9 @@
  <ShelterCard item={shelter}/>
    {/each}</Row>
 </Grid> -->
-<ExpandableSection items={shelters} component= {ShelterCard} itemsAbove={3} title={"More shelters"}/>
+<!-- <ExpandableSection items={shelters} component= {ShelterCard} itemsAbove={3} title={"More shelters"}/> -->
+<!-- <ExpandableSection itemsAbove={1} title={"More shelters"} items={items}  /> -->
+<ExpandableTile itemsAbove={2} title={"More shelters"} items={items}/>
 
 <style lang="scss">
  
