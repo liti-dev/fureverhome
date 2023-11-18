@@ -1,6 +1,7 @@
 <script lang="ts">
   // import { Button, ExpandableTile } from "carbon-components-svelte";
   import ChevronDown from "carbon-icons-svelte/lib/ChevronDown.svelte"
+  import ChevronUp from "carbon-icons-svelte/lib/ChevronUp.svelte"
  
  type Item = {
   props: any,
@@ -12,8 +13,9 @@
   export let title: string = "Show more";
   export let itemsAbove: number = 2;
   
-// let displayedItems = items.slice(0,itemsAbove)
-// let hiddenItems = items.slice(itemsAbove)
+let displayedItems = items.slice(0,itemsAbove)
+let hiddenItems = items.slice(itemsAbove)
+let isExpanded = false
 </script>
 
 <div class="expandable-container">
@@ -21,18 +23,27 @@
     <!-- add a number of items to the slot above
     add the rest of the items to the slot below -->
         
-    {#each items.slice(0, itemsAbove) as item}
+    {#each displayedItems as item}
     <div class="expandable-item"><svelte:component this = {item.component} {...item.props}/></div>
     {/each} 
-    
-  
+
+    {#if itemsAbove < items.length}
+    {#if isExpanded}    
+    {#each hiddenItems as item}
+        <div class="expandable-item"><svelte:component this = {item.component} {...item.props}/></div>
+        {/each} {/if}
+        <button class:hidden = {isExpanded}
+        on:click={() => isExpanded = !isExpanded}
+        type="button">{title}<span><ChevronDown/></span>
+      </button>
+      {/if}
+      {#if isExpanded}<button class:hidden = {!isExpanded}
+      on:click={() => isExpanded = !isExpanded}
+      type="button">Show less<span><ChevronUp/></span>
+    </button>{/if}
+      
 </div>
-{#if itemsAbove < items.length}
-    <button
-		on:click={() => itemsAbove = itemsAbove + 2}
-    type="button">{title}<span><ChevronDown/></span>
-  </button>
-{/if}
+
 
 <style>
 
@@ -63,6 +74,10 @@
 .expandable-item {
   margin: 1rem;
   width: 30%;
+}
+
+.hidden {
+  display:none;
 }
 
 @media (max-width: 600px) {

@@ -23,24 +23,24 @@ const items = [
   }},
   {
     component: ShelterCard,
-    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+    props:{item:{id: '02', name: 'Almost Home 2', location:'Moira', url:'https://www.almosthome-ni.org/'},
   }},
   
   {
     component: ShelterCard,
-    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+    props:{item:{id: '03', name: 'Almost Home 3', location:'Moira', url:'https://www.almosthome-ni.org/'},
   }},
   {
     component: ShelterCard,
-    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+    props:{item:{id: '04', name: 'Almost Home 4', location:'Moira', url:'https://www.almosthome-ni.org/'},
   }},
   {
     component: ShelterCard,
-    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+    props:{item:{id: '05', name: 'Almost Home 5', location:'Moira', url:'https://www.almosthome-ni.org/'},
   }},
   {
     component: ShelterCard,
-    props:{item:{id: '01', name: 'Almost Home', location:'Moira', url:'https://www.almosthome-ni.org/'},
+    props:{item:{id: '06', name: 'Almost Home 6', location:'Moira', url:'https://www.almosthome-ni.org/'},
   }},
    
 ]
