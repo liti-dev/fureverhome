@@ -1,7 +1,6 @@
 <script lang="ts">
-  import {Button, Column,  Grid, Row, Tag, Theme} from "carbon-components-svelte";
- 
-  import ExpandableSection from "./components/ExpandableSection.svelte";
+  import {Button, Column,  Grid, Row, Tag, Theme} from "carbon-components-svelte"; 
+  // import ExpandableSection from "./components/ExpandableSection.svelte";
   import ExpandableTile from "./components/ExpandableTile.svelte";
   import Hero from './components/Hero.svelte'
   import ShelterCard from "./components/ShelterCard.svelte"
@@ -64,14 +63,6 @@ const items = [
 />
 
 <Hero/>
-<!-- <Grid id="shelters" >
-  <Row  padding>
-    {#each shelters as shelter }
- <ShelterCard item={shelter}/>
-   {/each}</Row>
-</Grid> -->
-<!-- <ExpandableSection items={shelters} component= {ShelterCard} itemsAbove={3} title={"More shelters"}/> -->
-<!-- <ExpandableSection itemsAbove={1} title={"More shelters"} items={items}  /> -->
 <ExpandableTile itemsAbove={2} title={"More shelters"} items={items}/>
 
 <style lang="scss">

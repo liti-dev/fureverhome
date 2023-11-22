@@ -47,9 +47,9 @@
 <style>
  button {
   display:block;
-  width:100%;
+  width:50%;
   margin: 1rem 0;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   background-color: white;
   border-radius: 4px;
   border: 2px solid var(--foundation-primary-primary-600, #8E24D7);
@@ -71,8 +71,7 @@
   justify-content: center;
 }
 .expandable-item {
-  margin: 1rem;
-  width: 30%;
+  width: 50%;
 }
 
 .hidden {
@@ -80,7 +79,13 @@
 }
 
 @media (max-width: 600px) {
-  .expandable-container {flex-direction: column;}
+  button {
+    width:100%;
+  }
+  .expandable-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
   .expandable-item {
     width: 100%;
   }

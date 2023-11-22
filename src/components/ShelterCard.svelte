@@ -13,10 +13,14 @@
     </div>
  
 <style lang="scss">
- 
- 
+  
  img {
-    width: 100%;
+  display:block;
+  width: 100%;
+  }
+
+  .card {
+    margin: 1rem 1rem;
   }
 
 </style>
