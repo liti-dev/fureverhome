@@ -1,21 +1,19 @@
 <script lang="ts">
-  // import { Button, ExpandableTile } from "carbon-components-svelte";
   import ChevronDown from "carbon-icons-svelte/lib/ChevronDown.svelte"
   import ChevronUp from "carbon-icons-svelte/lib/ChevronUp.svelte"
  
  type Item = {
   props: any,
-  component: any
-  
+  component: any  
  }
 
   export let items: Item[] = [];
   export let title: string = "Show more";
   export let itemsAbove: number = 2;
   
-let displayedItems = items.slice(0,itemsAbove)
-let hiddenItems = items.slice(itemsAbove)
-let isExpanded = false
+  let displayedItems = items.slice(0,itemsAbove)
+  let hiddenItems = items.slice(itemsAbove)
+  let isExpanded = false
 </script>
 
 <div class="expandable-container">
@@ -28,25 +26,25 @@ let isExpanded = false
     {/each} 
 
     {#if itemsAbove < items.length}
-    {#if isExpanded}    
-    {#each hiddenItems as item}
+      {#if isExpanded}    
+      {#each hiddenItems as item}
         <div class="expandable-item"><svelte:component this = {item.component} {...item.props}/></div>
-        {/each} {/if}
+      {/each}         
+      {/if}
         <button class:hidden = {isExpanded}
         on:click={() => isExpanded = !isExpanded}
         type="button">{title}<span><ChevronDown/></span>
-      </button>
-      {/if}
-      {#if isExpanded}<button class:hidden = {!isExpanded}
+      </button>      
+      <button class:hidden = {!isExpanded}
       on:click={() => isExpanded = !isExpanded}
       type="button">Show less<span><ChevronUp/></span>
-    </button>{/if}
+    </button>
+    {/if}
       
 </div>
 
 
 <style>
-
  button {
   display:block;
   width:100%;
@@ -59,7 +57,6 @@ let isExpanded = false
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-
  }
 
   span {
@@ -67,9 +64,11 @@ let isExpanded = false
  }
 
  .expandable-container {
- display:flex;
- flex-direction: row;
- flex-wrap:wrap;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
 }
 .expandable-item {
   margin: 1rem;
